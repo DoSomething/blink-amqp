@@ -18,5 +18,14 @@
   "bugs": {
     "url": "https://github.com/DoSomething/blink-amqp/issues"
   },
-  "homepage": "https://github.com/DoSomething/blink-amqp#readme"
+  "homepage": "https://github.com/DoSomething/blink-amqp#readme",
+  "devDependencies": {
+    "@dosomething/eslint-config": "^3.0.0",
+    "ava": "^0.19.1",
+    "chai": "^4.0.2",
+    "codecov": "^2.2.0",
+    "eslint": "^4.0.0",
+    "eslint-plugin-ava": "^4.2.0",
+    "nyc": "^11.0.2"
+  }
 }
