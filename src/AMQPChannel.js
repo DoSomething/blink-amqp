@@ -1,11 +1,5 @@
 'use strict';
 
-const amqpuri = require('amqpuri');
-const defaultAmqp = require('amqplib');
-
-// const amqpUri = require('amqp-uri');
-// const amqp = require('amqplib');
-
 class AMQPChannel {
   constructor(connector) {
     this.connector = connector;
@@ -29,36 +23,6 @@ class AMQPChannel {
     // Rabbit echoes exchange name on successful response.
     return response.exchange === name;
   }
-
-
-
-  // async setup() {
-  //   // Assert exchange
-
-  //   const uri = amqpUri(this.config.amqp);s
-  //   this.connection = await amqp.connect(uri, {
-  //     clientProperties: {
-  //       app: {
-  //         // TODO: add dyno name
-  //         name: this.config.app.name,
-  //         version: this.config.app.version,
-  //         env: this.config.app.env,
-  //       },
-  //     },
-  //   });
-
-  //   this.channel = await this.connection.createChannel();
-  //   let response = {};
-  //   try {
-  //     response = await this.channel.assertExchange(this.name, 'topic');
-  //   } catch (error) {
-  //     // Wrap HTTP exceptions in meaningful response.
-  //     throw new Error(`Exchange.setup(): Exchange assertion failed for "${this.name}": ${error.message}`);
-  //   }
-
-  //   // Rabbit echoes exchange name on successful response.
-  //   return response.exchange === this.name;
-  // }
 
   // async setupQueue(queue) {
   //   const assertResponse = await this.channel.assertQueue(queue.name);
