@@ -4,6 +4,8 @@
   "description": "Opinionated AMPQ messaging library",
   "main": "index.js",
   "scripts": {
+    "coverage": "NODE_ENV=test nyc --all ava",
+    "html-coverage-report": "nyc report --reporter=html",
     "lint": "eslint .",
     "test": "NODE_ENV=test ava"
   },
