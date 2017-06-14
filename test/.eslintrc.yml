@@ -34,3 +34,14 @@
     ava/use-true-false: error
     # Support should constructs like result.should.be.true;
     no-unused-expressions: 'off'
+    # t variable is used for tests
+    id-length:
+      - error
+      - exceptions:
+        - t
+    # Allow t.context reassignment
+    no-param-reassign:
+      - error
+      - props: true
+        ignorePropertyModificationsFor:
+        - t
