@@ -12,16 +12,20 @@ class AMQPChannel {
   }
 
   async assertExchange(name) {
-    let respons;
     try {
-      response = await this.channel.assertExchange(name, 'topic');
+      const response = await this.channel.assertExchange(name, 'topic');
+
+      // Rabbit echoes exchange name on successful response.
+      if (response.exchange !== name) {
+        throw new Error(`Asserted exchange with an unexpected name "${response.exchange}"`);
+      }
+
+      return true;
+
     } catch (error) {
       // Wrap HTTP exceptions in meaningful response.
       throw new Error(`Exchange.setup(): Exchange assertion failed for "${name}": ${error.message}`);
     }
-
-    // Rabbit echoes exchange name on successful response.
-    return response.exchange === name;
   }
 
   // async setupQueue(queue) {
