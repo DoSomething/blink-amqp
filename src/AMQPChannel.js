@@ -7,7 +7,7 @@ class AMQPChannel {
   }
 
   async connect() {
-    const connection = await this.connector.getConnection();
+    const connection = await this.connector.connection;
     this.channel = connection.createChannel();
   }
 

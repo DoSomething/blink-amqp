@@ -2,15 +2,15 @@
 
 // ------- Imports -------------------------------------------------------------
 
+const amqplib = require('amqplib');
 const test = require('ava');
 const chai = require('chai');
-const amqplib = require('amqplib');
 const sinon = require("sinon");
 const sinonChai = require("sinon-chai");
 
-const Exchange = require('../../src/Exchange');
-const AMQPConnetor = require('../../src/AMQPConnetor');
 const AMQPChannel = require('../../src/AMQPChannel');
+const AMQPConnetor = require('../../src/AMQPConnetor');
+const Exchange = require('../../src/Exchange');
 
 // ------- Init ----------------------------------------------------------------
 
@@ -54,7 +54,7 @@ test('Exchange should create topic exchange named ThisIsExchangeName', async (t)
 
 // *
 //  * Exchange.setup(): Test RabbitMQ connection
- 
+
 // test.skip('Exchange.setup(): Test RabbitMQ connection', async () => {
 //   const locals = require('../../config');
 //   const testX = new Exchange(locals.amqp);

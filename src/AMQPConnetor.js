@@ -27,22 +27,7 @@ class AMQPConnetor {
    */
   async connect() {
     this.connection = await this.amqplib.connect(this.uri);
-    return true;
   }
-
-  async getConnection() {
-    return await this.connection;
-  }
-
-  // /**
-  //  * Create and return a new channel
-  //  * @return {AMQPChannel}
-  //  */
-  // async channel() {
-  //   // const channel = await this.connection.createChannel();
-  //   return new AMQPChannel(this)
-  //   return channel;
-  // }
 }
 
 module.exports = AMQPConnetor;
