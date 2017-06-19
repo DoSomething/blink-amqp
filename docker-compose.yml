@@ -1,0 +1,13 @@
+---
+version: '2'
+services:
+  rabbitmq:
+    image: rabbitmq:3.6.10-management
+    environment:
+      RABBITMQ_DEFAULT_USER: 'blink'
+      RABBITMQ_DEFAULT_VHOST: 'blink'
+      # Development password.
+      RABBITMQ_DEFAULT_PASS: 'blink'
+    ports:
+      - 15600:15672 # Management
+      - 5600:5672 # AMQP

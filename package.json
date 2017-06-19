@@ -7,7 +7,9 @@
     "coverage": "NODE_ENV=test nyc --all ava",
     "html-coverage-report": "nyc report --reporter=html",
     "lint": "eslint .",
-    "test": "NODE_ENV=test ava"
+    "test": "NODE_ENV=test ava test",
+    "test:unit": "NODE_ENV=test ava test/unit",
+    "test:integration": "NODE_ENV=test ava test/integration"
   },
   "repository": {
     "type": "git",
